@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: "goserver"
+  labels:
+    app: "goserver"
+spec:
+  selector:
+    matchLabels:
+      app: "goserver"
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: "goserver"
+    spec:
+      containers:
+        - name: "goserver"
+          image: "artragnus/hello-go"
+          readinessProbe:
+            httpGet:
+              path: /healthz # Path to check
+              port: 80
+            periodSeconds: 3 # Check application every 3 seconds
+            failureThreshold: 1 # Verification to consider failure
+            initialDelaySeconds: 5 # Delay to start checking
