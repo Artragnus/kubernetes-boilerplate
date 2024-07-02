@@ -30,8 +30,8 @@ Explicação breve sobre a estrutura de diretórios e arquivos.
 Clone o repositório para sua máquina local.
 
 ```bash
-git clone https://github.com/seu-usuario/boilerplate-k8s-manifestos.git
-cd boilerplate-k8s-manifestos
+git clone https://github.com/Artragnus/kubernetes-boilerplate.git
+cd kubernetes-boilerplate
 ```
 
 ### 2. Customizar os Manifestos
