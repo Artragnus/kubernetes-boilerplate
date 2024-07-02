@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: "goserver"
+  labels:
+    app: "goserver"
+spec:
+  selector:
+    matchLabels:
+      app: "goserver"
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: "goserver"
+    spec:
+      containers:
+        - name: "goserver"
+          image: "artragnus/hello-go"
+          resources:
+            requests:
+              memory: "20Mi"
+              cpu: "0.3"
+            limits:
+              memory: "25Mi"
+              cpu: "0.3"
