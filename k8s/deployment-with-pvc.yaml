@@ -24,3 +24,10 @@ spec:
             limits:
               memory: "25Mi"
               cpu: "0.05"
+          volumeMounts:
+            - name: goserver-pvc
+              mountPath: /data
+      volumes:
+        - name: goserver-pvc
+          persistentVolumeClaim:
+            claimName: goserver-pvc
